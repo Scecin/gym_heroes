@@ -40,3 +40,9 @@ def update_class(id):
     gym_class = Gym_class(name, teacher, duration, id)
     gym_class_repository.update(gym_class)
     return redirect("/gym_classes")
+
+# DELETE
+@gym_classes_blueprint.route("/gym_classes/<id>/delete", methods=["POST"])
+def delete_class(id):
+    gym_class_repository.delete(id)
+    return redirect("/gym_classes")
