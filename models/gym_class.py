@@ -1,4 +1,4 @@
-class Class:
+class Gym_class:
 
     def __init__(self, name, teacher, duration, id = None):
         self.name = name
