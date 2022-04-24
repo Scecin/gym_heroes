@@ -38,3 +38,14 @@ def update(gym_class):
     sql = "UPDATE gym_classes SET (name, teacher, duration) = (%s, %s, %s) WHERE id = %s"
     values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.id]
     run_sql(sql, values)
+
+# Delete all members
+def delete_all():
+    sql = "DELETE FROM gym_classes"
+    run_sql(sql)
+
+# Delete a member
+def delete(id):
+   sql = "DELETE FROM gym_classes WHERE id = %s"
+   values = [id]
+   run_sql(sql, values)
