@@ -15,7 +15,7 @@ CREATE TABLE gym_classes (
     duration INT
 );
 
-CREATE TABLE gyms (
+CREATE TABLE gym (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     member_id INT REFERENCES members(id) ON DELETE CASCADE,

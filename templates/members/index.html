@@ -5,20 +5,11 @@
 
 <table>
     <tr>
-        <th>First Name</th>
+        <th>Full Name</th>
     </tr>
     {% for member in members %}
     <tr>
-        <td><a href="/members/{{ member.id }}"> {{member.first_name}} </a></td>
-    </tr>
-    {% endfor %}
-
-    <tr>
-        <th>Last Name</th>
-    </tr>
-    {% for member in members %}
-    <tr>
-        <td><a href="/members/{{ member.id }}"> {{member.last_name}} </a></td>
+        <td><a href="/members/{{ member.id }}"> {{member.first_name}} {{member.last_name}}</a></td>
     </tr>
     {% endfor %}
 
