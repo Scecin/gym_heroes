@@ -6,11 +6,11 @@
 <form action="/gym_classes/{{ gym_class.id }}" method="POST">
     <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="ame" value="{{ gym_class.name }}">
+        <input type="text" id="name" name="name" value="{{ gym_class.name }}">
         <label for="teacher">Teacher:</label>
         <input type="text" id="teacher" name="teacher" value="{{ gym_class.teacher }}">
         <label for="duration">Duration:</label>
-        <input type="text" id="durationr" name="duration" value="{{ gym_class.duration }}">
+        <input type="text" id="duration" name="duration" value="{{ gym_class.duration }}">
         <input type="submit">
     </div>
 </form>

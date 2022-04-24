@@ -31,9 +31,8 @@ def edit_class(id):
     gym_class = gym_class_repository.select(id)
     return render_template('gym_classes/edit.html', gym_class = gym_class)
 
-
 # UPDATE
-@gym_classes_blueprint.route("/gym_classes/<id>", methods=['POST'])
+@gym_classes_blueprint.route("/gym_classes/<id>", methods=["POST"])
 def update_class(id):
     name = request.form["name"]
     teacher = request.form["teacher"]

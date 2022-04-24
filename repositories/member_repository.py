@@ -1,3 +1,4 @@
+from socket import SOCK_SEQPACKET
 from unittest import result
 from db.run_sql import run_sql
 
@@ -37,6 +38,17 @@ def select(id):
 
 # Update a member
 def update(member):
-    sql = "UPDATE members SET first_name = %s Where id = %s"
+    sql = "UPDATE members SET (first_name, last_name) = (%s, %s) WHERE id = %s"
     values = [member.first_name, member.last_name, member.id]
     run_sql(sql, values)
+
+# Delete all members
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
+
+# Delete a member
+def delete(id):
+   sql = "DELETE FROM members WHERE id = %s"
+   values = [id]
+   run_sql(sql, values)

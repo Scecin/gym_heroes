@@ -32,10 +32,10 @@ def edit_member(id):
     return render_template("members/edit.html", member = member)
 
 #UPDATE
-@members_blueprint.route("/members<id>", methods = ['POST'])
+@members_blueprint.route("/members/<id>", methods = ['POST'])
 def update_member(id):
     first_name = request.form["first_name"]
-    last_name = request.form["lasst_name"]
+    last_name = request.form["last_name"]
     member = Member(first_name, last_name, id)
     member_repository.update(member)
     return redirect("/members")
