@@ -34,3 +34,9 @@ def select(id):
     if result is not None:
         member = Member(result['first_name'], result['last_name'], result['id'])
     return member
+
+# Update a member
+def update(member):
+    sql = "UPDATE members SET name = %s Where id = %s"
+    values = [member.first_name, member.last_name, member.id]
+    run_sql(sql, values)
