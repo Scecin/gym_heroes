@@ -13,7 +13,6 @@ def members():
 #NEW
 @members_blueprint.route("/members/new")
 def new_member():
-    members = member_repository.select_all()
     return render_template("members/new.html")
 
 #CREATE
