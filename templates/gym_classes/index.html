@@ -1,35 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Classes</h1>
+<h2>Classes</h2>
 
-<table>
-    <tr>
-        <th>Class Name</th>
-    </tr>
-    {% for gym_class in gym_classes %}
-    <tr>
-        <td><a href="/gym_classes/{{ gym_class.id }}"> {{gym_class.name}} </a></td>
-    </tr>
-    {% endfor %}
+{% for gym_class in gym_classes %}
 
-    <tr>
-        <th>Teacher Name</th>
-    </tr>
-    {% for gym_class in gym_classes %}
-    <tr>
-        <td><a href="/gym_classes/{{ gym_class.id }}"> {{gym_class.teacher}} </a></td>
-    </tr>
-    {% endfor %}
-
-    <tr>
-        <th>Duration</th>
-    </tr>
-    {% for gym_class in gym_classes %}
-    <tr>
-        <td> {{gym_class.duration}} </td>
-    </tr>
-    {% endfor %}
-
-</table>
+<section>
+    <p> {{gym_class.name}} {{gym_class.teacher}} {{gym_class.duration}} </p>
+    <a href="/gym_classes/{{ gym_class.id }}/edit">Edit</a>
+    <form action="/gym_classes/{{ gym_class.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+{% endfor %}
 {% endblock %}

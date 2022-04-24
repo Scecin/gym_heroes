@@ -24,8 +24,9 @@ def select_all():
 
 # Select jus a class
 def select(id):
+   def select(id):
     gym_class = None
-    sql = "SELCT * FROM gym_classes WHERE id = %s"
+    sql = "SELECT * FROM gym_classes WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
@@ -33,7 +34,7 @@ def select(id):
         gym_class = Gym_class(result['name'], result['teacher'], result['duration'], result['id'])
     return gym_class
 
-#Update a class
+# Update a class
 def update(gym_class):
     sql = "UPDATE gym_classes SET name = %s Where id = %s"
     values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.id]
