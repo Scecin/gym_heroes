@@ -1,6 +1,6 @@
-DROP TABLE gyms;
-DROP TABLE members;
+DROP TABLE bookings;
 DROP TABLE gym_classes;
+DROP TABLE members;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
@@ -15,9 +15,8 @@ CREATE TABLE gym_classes (
     duration INT
 );
 
-CREATE TABLE gym (
+CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
     gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE
 );

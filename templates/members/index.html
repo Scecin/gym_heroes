@@ -9,7 +9,7 @@
     <p> {{member.first_name}} {{member.last_name}} </p>
     <a href="/members/{{ member.id }}/edit">Edit</a>
     <form action="/members/{{ member.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete"><hr>
     </form>
 </section>
 {% endfor %}

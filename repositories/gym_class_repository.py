@@ -1,6 +1,8 @@
 from unittest import result
+from controllers.member_controller import members
 from db.run_sql import run_sql
 from models.gym_class import Gym_class
+from models.member import Member
 
 # Save classes
 def save(gym_class):
@@ -49,3 +51,14 @@ def delete(id):
    sql = "DELETE FROM gym_classes WHERE id = %s"
    values = [id]
    run_sql(sql, values)
+
+def select_members_of_class(id):
+    members = []
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.gym_class_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        member = Member(result["first_name"], result["last_name"])
+        members.append(member)
+    return members

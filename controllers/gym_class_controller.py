@@ -46,3 +46,10 @@ def update_class(id):
 def delete_class(id):
     gym_class_repository.delete(id)
     return redirect("/gym_classes")
+
+# SHOW
+@gym_classes_blueprint.route("/gym_classes/<id>/show")
+def show_class(id):
+    members = gym_class_repository.select_members_of_class(id)
+    gym_class = gym_class_repository.select(id)
+    return render_template("gym_classes/show.html", members=members, gym_class=gym_class)
