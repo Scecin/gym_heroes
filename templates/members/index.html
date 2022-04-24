@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Members</h1>
+<h2>Members</h2>
 
-<table>
-    <tr>
-        <th>Full Name</th>
-    </tr>
-    {% for member in members %}
-    <tr>
-        <td><a href="/members/{{ member.id }}"> {{member.first_name}} {{member.last_name}}</a></td>
-    </tr>
-    {% endfor %}
+{% for member in members %}
 
-</table>
+<section>
+    <p> {{member.first_name}} {{member.last_name}} </p>
+    <a href="/members/{{ member.id }}/edit">Edit</a>
+    <form action="/members/{{ member.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+{% endfor %}
 {% endblock %}

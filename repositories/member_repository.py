@@ -29,7 +29,7 @@ def select(id):
     member = None
     sql = "SELECT * FROM members WHERE id = %s"
     values = [id]
-    results = run_sql(sql, values)[0]
+    result = run_sql(sql, values)[0]
 
     if result is not None:
         member = Member(result['first_name'], result['last_name'], result['id'])
@@ -37,6 +37,6 @@ def select(id):
 
 # Update a member
 def update(member):
-    sql = "UPDATE members SET name = %s Where id = %s"
+    sql = "UPDATE members SET first_name = %s Where id = %s"
     values = [member.first_name, member.last_name, member.id]
     run_sql(sql, values)

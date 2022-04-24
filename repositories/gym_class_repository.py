@@ -32,3 +32,9 @@ def select(id):
     if result is not None:
         gym_class = Gym_class(result['name'], result['teacher'], result['duration'], result['id'])
     return gym_class
+
+#Update a class
+def update(gym_class):
+    sql = "UPDATE gym_classes SET name = %s Where id = %s"
+    values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.id]
+    run_sql(sql, values)
