@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Classes</h1>
+
+<table>
+    <tr>
+        <th>Class Name</th>
+    </tr>
+    {% for gym_class in gym_classes %}
+    <tr>
+        <td><a href="/gym_classes/{{ gym_class.id }}"> {{gym_class.name}} </a></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <th>Teacher Name</th>
+    </tr>
+    {% for gym_class in gym_classes %}
+    <tr>
+        <td><a href="/gym_classes/{{ gym_class.id }}"> {{gym_class.teacher}} </a></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <th>Duration</th>
+    </tr>
+    {% for gym_class in gym_classes %}
+    <tr>
+        <td> {{gym_class.duration}} </td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}
