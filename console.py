@@ -8,9 +8,15 @@ import repositories.booking_repository as booking_repository
 
 member_1 = Member('Anna', 'Mackenzie')
 member_repository.save(member_1)
+member_2 = Member('David', 'Brown')
+member_repository.save(member_2)
 
-gym_class_1 = Gym_class('Cycling', 'David', 45)
+gym_class_1 = Gym_class('Cycling', 'David', 45, 10)
 gym_class_repository.save(gym_class_1)
+gym_class_2 = Gym_class('Yoga', 'Juy', 60, 18)
+gym_class_repository.save(gym_class_2)
 
-booking = Booking(member_1, gym_class_1)
-booking_repository.save(booking)
+booking_1 = Booking(member_1, gym_class_1)
+booking_repository.save(booking_1)
+booking_2 = Booking(member_2, gym_class_2)
+booking_repository.save(booking_2)

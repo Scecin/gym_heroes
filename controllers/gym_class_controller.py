@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, request, Blueprint
 from models.gym_class import Gym_class
 import repositories.gym_class_repository as gym_class_repository
+import repositories.member_repository as member_repository
 
 gym_classes_blueprint = Blueprint("gym_classes", __name__)
 
@@ -21,7 +22,8 @@ def create_class():
     name = request.form["name"]
     teacher = request.form["teacher"]
     duration = request.form["duration"]
-    new_class = Gym_class(name, teacher, duration)
+    capacity = request.form["capacity"]
+    new_class = Gym_class(name, teacher, duration, capacity)
     gym_class_repository.save(new_class)
     return redirect("/gym_classes")
 
@@ -37,7 +39,8 @@ def update_class(id):
     name = request.form["name"]
     teacher = request.form["teacher"]
     duration = request.form["duration"]
-    gym_class = Gym_class(name, teacher, duration, id)
+    capacity = request.form["capacity"]
+    gym_class = Gym_class(name, teacher, duration, capacity, id)
     gym_class_repository.update(gym_class)
     return redirect("/gym_classes")
 
@@ -50,6 +53,6 @@ def delete_class(id):
 # SHOW
 @gym_classes_blueprint.route("/gym_classes/<id>/show")
 def show_class(id):
-    members = gym_class_repository.select_members_of_class(id)
+    members = member_repository.by_class(id)
     gym_class = gym_class_repository.select(id)
     return render_template("gym_classes/show.html", members=members, gym_class=gym_class)

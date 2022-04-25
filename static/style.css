@@ -1,0 +1,15 @@
+body {
+    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+}
+
+.header{
+    display: flex;
+    background-color: aquamarine; 
+    padding: 24px;
+    flex-direction: row;
+    align-content:space-between;
+}
+
+.header>nav {
+    align-items: flex-end;
+}

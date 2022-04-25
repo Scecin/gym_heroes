@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Gym Heroes</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Gym Heroes</h1>
         <nav>
-            <ul class="menu">
+            <ul>
                 <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+        <nav>
+            <ul class="images">
                 <li>
                     Members
                     <ul>
@@ -27,15 +33,15 @@
                     </ul>
                 </li>
                 <li>
-                    Book a Class
+                    Bookings
                     <ul>
                         <li><a href="/bookings">All</a></li>
-                        <li><a href="/bookings/new">Book</a></li>
+                        <li><a href="/bookings/new">Add</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-    </header>
+    
     <div class="container">
         {% block content %}
         {% endblock %}

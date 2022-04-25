@@ -1,3 +1,4 @@
+
 class Booking:
 
     def __init__(self, member, gym_class, id = None ):
