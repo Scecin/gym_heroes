@@ -7,11 +7,17 @@
 
 <section>
     <p>{{gym_class.name}} by {{gym_class.teacher}} during {{gym_class.duration}} min, for {{gym_class.capacity}} people during {{gym_class.peak_hour}}.</p>
-    <a href="/gym_classes/{{ gym_class.id }}/edit">Edit</a><br>
-    <a href="/gym_classes/{{ gym_class.id }}/show">Members</a>
-    <form action="/gym_classes/{{ gym_class.id }}/delete" method="POST">
-        <input type="submit" value="Delete"><hr>
+    <div class="align_buttons ">
+        <form action="/gym_classes/{{ gym_class.id }}/edit">
+            <input class="secondary_button" type="submit" value="Edit">
+        </form>
+        <form  action="/gym_classes/{{ gym_class.id }}/show">
+            <input class="secondary_button" type="submit" value="Members">
+        </form>
+        <form action="/gym_classes/{{ gym_class.id }}/delete" method="POST">
+            <input class="secondary_button" type="submit" value="Delete">
     </form>
+</div><hr>
 </section>
 {% endfor %}
 {% endblock %}

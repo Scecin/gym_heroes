@@ -9,34 +9,36 @@
 </head>
 <body>
     <header class="header">
-        <h1 id="title">Gym Heroes</h1>
+        <h1 class="title">Gym Heroes</h1>
         <nav>
-            <ul id="nav">
-                <li><a href="/">Home</a></li>
+            <ul class="home">
+                <a  href="/">Home</a></li>
             </ul>
         </nav>
     </header>
-        <nav>
+        <nav class="nav">
             <ul class="images">
-                <ul>
-                    <h3>Members</h3>
+                <ul class="members">
+                    <h2>Members</h2>
                     <ul>
-                        <a class="image" href="/members"><img src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="200px"></a><br>
-                        <a href="/members/new">Add</a>
+                        <a href="/members"><img src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="250px" border-radius=8px ></a><br>
+                        <button class="button" href="/members/new">Add a new member</button>
                     </ul>
                 </ul>
                 <ul>
-                    <h3>Classes</h3>
+                    <h2>Classes</h2>
                     <ul>
-                        <a href="/gym_classes"><img src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="200px"></a><br>
-                        <a href="/gym_classes/new">Add</a>
+                        <a class="image" href="/gym_classes"><img src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="250px"></a><br>
+                        <button class="button" href="/gym_classes/new">Add a new class</button>
                     </ul>
                 </ul>
                 <ul>
-                    <h3>Bookings</h3>
+                    <h2>Bookings</h2>
                     <ul>
-                        <a href="/bookings"><img src="{{ url_for('static', filename='booking.jpg') }}" alt="booking_picture" height="200px"></a><br>
-                        <a href="/bookings/new">Add</a>
+                        <div class="booking">
+                        <a href="/bookings"><img src="{{ url_for('static', filename='booking.jpg') }}" alt="booking_picture" height="250px"></a><br>
+                        </div>
+                        <button class="button" href="/bookings/new">Add a new booking</button>
                     </ul>
                 </ul>
             </ul>
@@ -44,9 +46,6 @@
         <div class="hr">
             <hr>
         </div>
-        
-        
-        <!-- <img src="../images/members.jp" alt="paper_icon"> -->
     <div class="container">
         {% block content %}
         {% endblock %}
