@@ -1,15 +1,39 @@
 body {
-    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    font-family: "Helvetica", arial, sans-serif;
+    margin: 0px;
+    background-color: dimgray;
+    color: aliceblue;
 }
 
 .header{
+    color: black;
     display: flex;
     background-color: aquamarine; 
     padding: 24px;
     flex-direction: row;
     align-content:space-between;
+    align-content: center;
+}
+#title #nav {
+    display: inline;
 }
 
-.header>nav {
-    align-items: flex-end;
+.images {
+    display: flex;
+    flex-direction: row;
 }
+
+.hr {
+    padding-top: 48px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.container {
+    padding-left: 48px;
+    padding-top: 24px;
+    padding-right: 48px;
+    padding-bottom: 48px;
+}
+
+

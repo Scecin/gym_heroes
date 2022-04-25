@@ -6,8 +6,8 @@ from models.member import Member
 
 # Save classes
 def save(gym_class):
-    sql = "INSERT INTO gym_classes (name, teacher, duration, capacity) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.capacity]
+    sql = "INSERT INTO gym_classes (name, teacher, duration, capacity, peak_hour) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.capacity, gym_class.peak_hour]
     results = run_sql(sql, values)
     gym_class.id = results[0]['id']
     return gym_class
@@ -20,7 +20,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        gym_class = Gym_class(row['name'], row['teacher'], row['duration'], row['capacity'], row ['id'])
+        gym_class = Gym_class(row['name'], row['teacher'], row['duration'], row['capacity'], row['peak_hour'], row ['id'])
         gym_classes.append(gym_class)
     return gym_classes
 
@@ -32,13 +32,13 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        gym_class = Gym_class(result['name'], result['teacher'], result['duration'], result['capacity'], result['id'])
+        gym_class = Gym_class(result['name'], result['teacher'], result['duration'], result['capacity'], result['peak_hour'], result['id'])
     return gym_class
 
 # Update a class
 def update(gym_class):
-    sql = "UPDATE gym_classes SET (name, teacher, duration, capacity) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.capacity, gym_class.id]
+    sql = "UPDATE gym_classes SET (name, teacher, duration, capacity, peak_hour) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.capacity, gym_class.peak_hour, gym_class.id]
     run_sql(sql, values)
 
 # Delete all members

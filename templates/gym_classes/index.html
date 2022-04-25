@@ -6,7 +6,7 @@
 {% for gym_class in gym_classes %}
 
 <section>
-    <p>{{gym_class.name}} by {{gym_class.teacher}} during {{gym_class.duration}} min, for {{gym_class.capacity}} people.</p>
+    <p>{{gym_class.name}} by {{gym_class.teacher}} during {{gym_class.duration}} min, for {{gym_class.capacity}} people during {{gym_class.peak_hour}}.</p>
     <a href="/gym_classes/{{ gym_class.id }}/edit">Edit</a><br>
     <a href="/gym_classes/{{ gym_class.id }}/show">Members</a>
     <form action="/gym_classes/{{ gym_class.id }}/delete" method="POST">

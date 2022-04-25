@@ -7,8 +7,8 @@ from models.gym_class import Gym_class
 
 # Save a member
 def save(member):
-    sql = "INSERT INTO members(first_name, last_name) VALUES (%s, %s) RETURNING id"
-    values = [member.first_name, member.last_name]
+    sql = "INSERT INTO members(first_name, last_name, membership) VALUES (%s, %s, %s) RETURNING id"
+    values = [member.first_name, member.last_name, member.membership]
     results = run_sql(sql, values)
     member.id = results[0]['id']
     return member
@@ -20,7 +20,7 @@ def select_all():
     sql = "SELECT * FROM members"
     results = run_sql(sql)
     for row in results:
-        member = Member(row['first_name'], row['last_name'], row['id'])
+        member = Member(row['first_name'], row['last_name'], row['membership'], row['id'])
         members.append(member)
     return members
 
@@ -33,13 +33,13 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        member = Member(result['first_name'], result['last_name'], result['id'])
+        member = Member(result['first_name'], result['last_name'], result['membership'], result['id'])
     return member
 
 # Update a member
 def update(member):
-    sql = "UPDATE members SET (first_name, last_name) = (%s, %s) WHERE id = %s"
-    values = [member.first_name, member.last_name, member.id]
+    sql = "UPDATE members SET (first_name, last_name, membership) = (%s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.membership, member.id]
     run_sql(sql, values)
 
 # Delete all members
@@ -60,6 +60,6 @@ def by_class(id):
     values = [id]
     results = run_sql(sql, values)
     for result in results:
-        member = Member(result["first_name"], result["last_name"])
+        member = Member(result["first_name"], result["last_name"], result["membership"])
         members.append(member)
     return members
