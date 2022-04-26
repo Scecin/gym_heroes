@@ -6,7 +6,7 @@
 {% for booking in bookings %}
 
 <section>
-    <p> {{ booking.member.first_name }} {{ booking.member.last_name }} is attending {{ booking.gym_class.name }}</p>
+    <p> {{ booking.member.first_name }} {{ booking.member.last_name }} is attending {{ booking.gym_class.name }} </p>
     <div class="align_buttons ">
         <form action="/bookings/{{ booking.id }}/edit">
             <input class="secondary_button" type="submit" value="Edit">
@@ -14,7 +14,7 @@
         <form  action="/bookings/{{ booking.id }}/delete" method="POST">
             <input class="secondary_button" type="submit" value="Delete">
         </form>
-        </div><hr>
+    </div><hr>
 </section>
 
 {% endfor %}

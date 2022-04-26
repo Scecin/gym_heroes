@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, redirect, render_template, request
 from flask import Blueprint
 from models.booking import Booking
@@ -11,7 +10,7 @@ bookings_blueprint = Blueprint("bookings", __name__)
 
 # INDEX
 @bookings_blueprint.route("/bookings")
-def booking():
+def bookings():
     bookings = booking_repository.select_all()
     return render_template("bookings/index.html", bookings = bookings)
 
@@ -30,10 +29,27 @@ def create_booking():
     member = member_repository.select(member_id)
     gym_class = gym_class_repository.select(gym_class_id)
     if check_capacity(gym_class):
-        # if member.membership == "Standard":
-        #     if check_peak_hour(gym_class):
-                new_booking = Booking(member, gym_class)
-                booking_repository.save(new_booking)
+        new_booking = Booking(member, gym_class)
+        booking_repository.save(new_booking)
+    return redirect("/bookings")
+
+#EDIT
+@bookings_blueprint.route("/bookings/<id>/edit")
+def edit_booking(id):
+    booking =booking_repository.select(id)
+    members = member_repository.select_all()
+    gym_classes = gym_class_repository.select_all()
+    return render_template("bookings/edit.html", booking = booking, members = members, gym_classes = gym_classes)
+
+#UPDATE
+@bookings_blueprint.route("/bookings/<id>", methods=["POST"])
+def update_booking(id):
+    member_id = request.form["member_id"]
+    gym_class_id = request.form["gym_class_id"]
+    member = member_repository.select(member_id)
+    gym_class = gym_class_repository.select(gym_class_id)
+    booking = Booking(member, gym_class, id)
+    booking_repository.update(booking)
     return redirect("/bookings")
 
 #DELETE
@@ -41,4 +57,7 @@ def create_booking():
 def delete_booking(id):
     booking_repository.delete(id)
     return redirect("/bookings")
+
+# if member.membership == "Standard":
+        #     if check_peak_hour(gym_class):
 

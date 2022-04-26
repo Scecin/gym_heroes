@@ -22,14 +22,18 @@
                     <h2>Members</h2>
                     <ul>
                         <a href="/members"><img src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="250px" border-radius=8px ></a><br>
-                        <button class="button" href="/members/new">Add a new member</button>
+                        <form action="/members/new">
+                            <input class="button" type="submit" value="Add a new member">
+                        </form>
                     </ul>
                 </ul>
                 <ul>
                     <h2>Classes</h2>
                     <ul>
                         <a class="image" href="/gym_classes"><img src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="250px"></a><br>
-                        <button class="button" href="/gym_classes/new">Add a new class</button>
+                        <form action="/gym_classes/new">
+                            <input class="button" type="submit" value="Add a new class">
+                        </form>
                     </ul>
                 </ul>
                 <ul>
@@ -38,7 +42,9 @@
                         <div class="booking">
                         <a href="/bookings"><img src="{{ url_for('static', filename='booking.jpg') }}" alt="booking_picture" height="250px"></a><br>
                         </div>
-                        <button class="button" href="/bookings/new">Add a new booking</button>
+                        <form action="/bookings/new">
+                            <input class="button" type="submit" value="Add a new booking">
+                        </form>
                     </ul>
                 </ul>
             </ul>

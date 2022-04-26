@@ -8,12 +8,12 @@
 <section>
     <p> {{member.first_name}} {{member.last_name}} has a {{member.membership}} membership</p>
     <div class="align_buttons ">
-    <form action="/members/{{ member.id }}/edit">
-        <input class="secondary_button" type="submit" value="Edit">
-    </form>
-    <form  action="/members/{{ member.id }}/delete" method="POST">
-        <input class="secondary_button" type="submit" value="Delete">
-    </form>
+        <form action="/members/{{ member.id }}/edit">
+            <input class="secondary_button" type="submit" value="Edit">
+        </form>
+        <form  action="/members/{{ member.id }}/delete" method="POST">
+            <input class="secondary_button" type="submit" value="Delete">
+        </form>
     </div><hr>
 </section>
 {% endfor %}

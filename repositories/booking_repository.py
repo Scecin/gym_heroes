@@ -6,7 +6,7 @@ from models.member import Member
 import repositories.gym_class_repository as gym_class_repository
 import repositories.member_repository as member_repository
 
-# save gym
+# save booking
 def save(booking):
     sql = "INSERT INTO bookings (member_id, gym_class_id) VALUES (%s, %s) RETURNING id"
     values = [booking.member.id, booking.gym_class.id]
@@ -14,7 +14,7 @@ def save(booking):
     id = results[0]["id"]
     booking.id = id
 
-# Select all the information inside gym
+# Select bookings
 def select_all():
     bookings = []
     sql = "SELECT * FROM bookings"
@@ -26,7 +26,7 @@ def select_all():
         bookings.append(booking)
     return bookings
 
-# Select
+# Select jusst one booking
 def select(id):
     booking = None
     sql = "SELECT * FROM bookings WHERE id = %s"
