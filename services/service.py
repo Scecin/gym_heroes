@@ -7,11 +7,4 @@ def check_capacity(gym_class):
         capacity = False
     return  capacity
 
-#check if it's peak hour
-def check_peak_hour(gym_class):
-    peak_hour = False
-    if gym_class.peak_hour == True:
-        peak_hour = True
-    return peak_hour
-
 

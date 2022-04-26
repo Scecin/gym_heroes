@@ -10,7 +10,7 @@ member_1 = Member('Anna', 'Mackenzie', 'Standard')
 member_repository.save(member_1)
 member_2 = Member('David', 'Brown', 'Premium')
 member_repository.save(member_2)
-member_3 = Member('Mary', 'Thomson', 'Standard')
+member_3 = Member('Mary', 'Thomson', 'Premium')
 member_repository.save(member_3)
 
 gym_class_1 = Gym_class('Cycling', 'David', 45, 10, 'Peak hour')
