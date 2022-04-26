@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Gym Heroes</title>
 </head>
 <body>
@@ -12,6 +14,7 @@
         <h1 class="title">Gym Heroes</h1>
         <nav>
             <ul class="home">
+                <i class="fa fa-home fa-2x"></i>
                 <a  href="/">Home</a></li>
             </ul>
         </nav>
@@ -45,6 +48,7 @@
                         <form action="/bookings/new">
                             <input class="button" type="submit" value="Add a new booking">
                         </form>
+
                     </ul>
                 </ul>
             </ul>
@@ -55,6 +59,29 @@
     <div class="container">
         {% block content %}
         {% endblock %}
-    </div>   
+    </div> 
+    <footer class="footer">
+        <div class="contact">
+            <div class="address">
+                <i class="material-icons">place</i>
+                <p> 37 Castle Terrace, EH1 2EL</p> 
+            </div>
+            <div class="phone">
+                <i class="material-icons">local_phone</i>
+                <p> +44 7123456789 </p>
+            </div>
+            <div class="email">
+                <i class="material-icons">local_post_office</i>
+                <p> support@gymheroes.com </p>
+            </div>
+        </div>
+        <p class="logo"> &copy; Gym Heroes 2022 </p>
+        <div>
+            <a href="#" class="fa fa-facebook fa-2x"></a>
+            <a href="#" class="fa fa-twitter fa-2x"></a>
+            <a href="#" class="fa fa-linkedin fa-2x"></a>
+            <a href="#" class="fa fa-instagram fa-2x"></a>
+        </div>
+    </footer>
 </body>
 </html>
