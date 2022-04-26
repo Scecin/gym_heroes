@@ -21,7 +21,8 @@ def create_member():
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
     membership = request.form["membership"]
-    new_member = Member(first_name, last_name, membership)
+    state = request.form["state"]
+    new_member = Member(first_name, last_name, membership, state)
     member_repository.save(new_member)
     return redirect("/members")
 
@@ -38,7 +39,8 @@ def update_member(id):
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
     membership = request.form["membership"]
-    member = Member(first_name, last_name, membership, id)
+    state = request.form["state"]
+    member = Member(first_name, last_name, membership, state, id)
     member_repository.update(member)
     return redirect("/members")
 

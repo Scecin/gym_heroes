@@ -6,7 +6,7 @@
 {% for member in members %}
 
 <section>
-    <p> {{member.first_name}} {{member.last_name}} has a {{member.membership}} membership</p>
+    <p> {{member.first_name}} {{member.last_name}} has a {{member.membership}} membership and is  {{member.state}}. </p>
     <div class="align_buttons ">
         <form action="/members/{{ member.id }}/edit">
             <input class="secondary_button" type="submit" value="Edit">

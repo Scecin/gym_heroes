@@ -67,6 +67,3 @@ def delete_booking(id):
     booking_repository.delete(id)
     return redirect("/bookings")
 
-# if member.membership == "Standard":
-        #     if check_peak_hour(gym_class):
-

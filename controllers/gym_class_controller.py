@@ -24,7 +24,8 @@ def create_class():
     duration = request.form["duration"]
     capacity = request.form["capacity"]
     peak_hour = request.form["peak_hour"]
-    new_class = Gym_class(name, teacher, duration, capacity, peak_hour)
+    state = request.form["state"]
+    new_class = Gym_class(name, teacher, duration, capacity, peak_hour, state)
     gym_class_repository.save(new_class)
     return redirect("/gym_classes")
 
@@ -42,7 +43,8 @@ def update_class(id):
     duration = request.form["duration"]
     capacity = request.form["capacity"]
     peak_hour = request.form["peak_hour"]
-    gym_class = Gym_class(name, teacher, duration, capacity, peak_hour, id)
+    state = request.form["state"]
+    gym_class = Gym_class(name, teacher, duration, capacity, peak_hour, state, id)
     gym_class_repository.update(gym_class)
     return redirect("/gym_classes")
 

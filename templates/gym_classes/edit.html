@@ -14,8 +14,13 @@
         <label for="capacity">Capacity:</label>
         <input type="text" id="capacity" name="capacity" value="{{ gym_class.capacity }}">
         <select name="peak_hour">
-            <option>Peak hour</option>
+            <option >Peak hour</option>
             <option>Off-peak hours</option>
+        </select>
+        <label for="state">State:</label>
+        <select name="state">
+            <option>Activate</option>
+            <option>Deactivated</option>
         </select>
         <input type="submit">
     </div>

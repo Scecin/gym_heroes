@@ -17,8 +17,10 @@ def save(booking):
 # Select bookings
 def select_all():
     bookings = []
+
     sql = "SELECT * FROM bookings"
     results = run_sql(sql)
+    
     for row in results:
         member = member_repository.select(row["member_id"])
         gym_class = gym_class_repository.select(row["gym_class_id"])

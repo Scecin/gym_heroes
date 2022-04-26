@@ -8,9 +8,11 @@
         <label for="member">Member:</label>
         <select name="member_id" id="member">
             {% for member in members %}
-            <option value="{{ member.id }}">
-                {{ member.first_name }} {{ member.last_name }}
-            </option>
+                {% if member.state == "Activate"%}
+                    <option value="{{ member.id }}">
+                        {{ member.first_name }} {{ member.last_name }}
+                    </option>
+                {% endif %}
             {% endfor %}
         </select>
     </div>
@@ -18,9 +20,11 @@
         <label for="gym_class">Class:</label>
         <select name="gym_class_id" id="gym_class">
             {% for gym_class in gym_classes %}
-            <option value="{{ gym_class.id }}">
-                {{ gym_class.name }}
-            </option>
+                {% if gym_class.state == "Activate"%}
+                    <option value="{{ gym_class.id }}">
+                        {{ gym_class.name }}
+                    </option>
+                {% endif %}
             {% endfor %}
         </select>    
     </div>
