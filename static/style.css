@@ -1,12 +1,25 @@
+/*  General */
 body {
     font-family: "Roboto", arial, sans-serif;
     margin: 0px;
     background-color: #282828;
     color: aliceblue;
 }
+
+.secondary_text {
+    font-size: large;
+    margin-left: 48x;
+    margin-top: 24px;
+}
+
+h2 {
+    color: aquamarine;
+    font-size: xx-large;
+}
+
+/* header */
 .title {
     font-size: 3em;
-    padding: 8px;
     padding-left: 48px;
 }
 
@@ -20,12 +33,76 @@ body {
     background-color: aquamarine; 
     flex-direction: row;
     justify-content: space-between;
+    height: 120px;
 }
 
+/*  Header picture */
+.header_picture {
+    position: relative;
+    color: white;
+}
+
+.top-left {
+    position: absolute;
+    top: 24px;
+    left: 48px;
+    color: white;
+    font-size: 2em;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: row;
+}
+
+span {
+    padding: 8px;
+    padding-right: 8px;
+    font-size: 32px;
+    color: aquamarine;
+    font-weight: bold;
+}
+
+a {
+    color: #282828;
+}
+
+ /* Image buttons */
 .images {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.nav {
+    margin-top: 48px;
+}
+
+.image {
+    border-radius:30px;
+}
+
+.image:hover {
+    opacity: 0.7;
+    border: solid aquamarine 2px;
+}
+
+.pictures {
+    position: relative;
+    text-align: center;
+}
+
+.top-center {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+}
+
+.booking {
+    padding-right: 48px;
 }
 
 .hr {
@@ -35,11 +112,7 @@ body {
     border-top: 1px;
 }
 
-h2 {
-    color: aquamarine;
-    font-size: xx-large;
-}
-
+/*  Content */
 .container {
     padding-left: 48px;
     padding-top: 24px;
@@ -47,8 +120,10 @@ h2 {
     padding-bottom: 48px;
 }
 
-.booking {
-    padding-right: 48px;
+.title_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .button {
@@ -88,7 +163,10 @@ h2 {
     flex-direction: row; 
 }
 
+/*  Footer */
+
 .footer {
+    display: flex;
     background-color: aquamarine;
     margin: 0px;
     color: #282828;
@@ -96,7 +174,7 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     padding: 48px;
-    
+    height: 150px;
 }
 
 .fa {
@@ -178,75 +256,6 @@ h2 {
 .information {
     display: flex;
     flex-direction: column;
-}
-
-.nav {
-    margin-top: 48px;
-}
-
-.header_picture {
-    position: relative;
+    margin-bottom: 24px;
     text-align: center;
-    color: white;
-}
-
-.top-left {
-    position: absolute;
-    top: 200px;
-    left: 48px;
-    color: white;
-    font-size: 2em;
-}
-
-.secondary_text {
-    font-size: large;
-    margin-left: 48x;
-    margin-top: 24px;
-}
-
-.paragraph {
-    display: flex;
-    flex-direction: row;
-}
-
-span {
-    padding: 8px;
-    padding-right: 8px;
-    font-size: 32px;
-    color: aquamarine;
-    font-weight: bold;
-}
-
-.top-center {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    font-size: xx-large;
-    font-weight: bold;
-    color: white;
-}
-
-.pictures {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.image {
-    border-radius:30px;
-}
-
-.image:hover {
-    opacity: 0.7;
-    border: solid aquamarine 2px;
-}
-
-.title_button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-a {
-    color: #282828;
 }
