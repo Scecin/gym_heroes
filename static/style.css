@@ -211,7 +211,7 @@ h2 {
 
 span {
     padding: 8px;
-    padding-right: 16px;
+    padding-right: 8px;
     font-size: 32px;
     color: aquamarine;
     font-weight: bold;
@@ -221,7 +221,7 @@ span {
     position: absolute;
     top: 5%;
     left: 50%;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
     color: white;
 }
