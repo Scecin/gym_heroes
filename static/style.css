@@ -37,6 +37,7 @@ body {
 
 h2 {
     color: aquamarine;
+    font-size: xx-large;
 }
 
 .container {
@@ -93,34 +94,40 @@ h2 {
     color: #282828;
     display: flex;
     flex-direction: row;
-    padding: 16px;
-    padding-left: 48px;
     justify-content: space-between;
+    padding: 48px;
     
 }
 
 .fa {
-    padding: 8px;
+    padding: 4px;
     font-size: 30px;
     width: 35px;
-    border-radius:15px;
+    border-radius:5px;
     text-align: center;
     text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
 }
 
 .fa-facebook {
     background: #3B5998;
     color: white;
+    margin-right: 8px;
 }
 
 .fa-twitter {
     background: #55ACEE;
     color: white;
+    margin-right: 8px;
 }
 
 .fa-linkedin {
     background: #007bb5;
     color: white;
+    margin-right: 8px;
 }
 
 .fa-instagram {
@@ -132,14 +139,12 @@ h2 {
     color: white;
 }
 
-.fa:hover {
-    opacity: 0.7;
-}
-
 .contact {
     display: flex;
     flex-direction: column;
-    line-height: 0;
+    font-size: small;
+    line-height: 0px;
+    padding: 24px;
 }
 .address {
     display: flex;
@@ -157,11 +162,91 @@ h2 {
 }
 
 .material-icons {
-    padding-top: 4px;
     padding-right: 16px;
-    font-size: x-large;
+    font-size: 8px;
 }
 
 .logo {
-    font-size:x-large;
+    font-size:large;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    margin-top: 48px;
+}
+
+.header_picture {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left {
+    position: absolute;
+    top: 200px;
+    left: 48px;
+    color: white;
+    font-size: 2em;
+}
+
+.secondary_text {
+    font-size: large;
+    margin-left: 48x;
+    margin-top: 24px;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: row;
+}
+
+span {
+    padding: 8px;
+    padding-right: 16px;
+    font-size: 32px;
+    color: aquamarine;
+    font-weight: bold;
+}
+
+.top-center {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+}
+
+.pictures {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.image {
+    border-radius:30px;
+}
+
+.image:hover {
+    opacity: 0.7;
+    border: solid aquamarine 2px;
+}
+
+.title_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a {
+    color: #282828;
 }

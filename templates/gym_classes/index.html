@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Classes</h2>
+<div class="title_button">
+    <h2>Classes</h2>
+
+    <form action="/gym_classes/new">
+        <input class="button" type="submit" value="Add a new class">
+    </form>
+</div>
 
 {% for gym_class in gym_classes %}
 

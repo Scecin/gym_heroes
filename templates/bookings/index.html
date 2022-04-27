@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Bookings</h2>
+<div class="title_button">
+    <h2>Bookings</h2>
+
+    <form action="/bookings/new">
+        <input class="button" type="submit" value="Add a new booking">
+    </form>
+</div>
 
 {% for booking in bookings %}
 

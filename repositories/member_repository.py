@@ -1,9 +1,5 @@
-from socket import SOCK_SEQPACKET
-from unittest import result
 from db.run_sql import run_sql
-
 from models.member import Member
-from models.gym_class import Gym_class
 
 # Save a member
 def save(member):
@@ -49,9 +45,9 @@ def delete_all():
 
 # Delete a member
 def delete(id):
-   sql = "DELETE FROM members WHERE id = %s"
-   values = [id]
-   run_sql(sql, values)
+    sql = "DELETE FROM members WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 # check members in a class
 def by_class(id):

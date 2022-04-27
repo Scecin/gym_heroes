@@ -7,23 +7,36 @@
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="{{ gym_class.name }}">
+    </div><br>
+    <div>
         <label for="teacher">Teacher:</label>
         <input type="text" id="teacher" name="teacher" value="{{ gym_class.teacher }}">
+    </div><br>
+    <div>
         <label for="duration">Duration:</label>
         <input type="text" id="duration" name="duration" value="{{ gym_class.duration }}">
+    </div><br>
+    <div>
         <label for="capacity">Capacity:</label>
         <input type="text" id="capacity" name="capacity" value="{{ gym_class.capacity }}">
+    </div><br>
+    <div>
+        <label for="peak_hour">Hour:</label>
         <select name="peak_hour">
             <option >Peak hour</option>
-            <option>Off-peak hours</option>
+            <option>Off-Peak hours</option>
         </select>
+    </div><br>
+    <div>
         <label for="state">State:</label>
         <select name="state">
             <option>Activate</option>
             <option>Deactivated</option>
         </select>
+    </div><br>
+    <div>
         <input type="submit">
-    </div>
+    </div><br>
 </form>
 
 {% endblock %}

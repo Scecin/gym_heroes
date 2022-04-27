@@ -1,8 +1,5 @@
-from unittest import result
-from controllers.member_controller import members
 from db.run_sql import run_sql
 from models.gym_class import Gym_class
-from models.member import Member
 
 # Save classes
 def save(gym_class):

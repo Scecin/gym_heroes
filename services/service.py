@@ -1,4 +1,3 @@
-from asyncio import FastChildWatcher
 from repositories.member_repository import by_class
 
 def check_capacity(gym_class):

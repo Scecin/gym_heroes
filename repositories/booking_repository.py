@@ -1,8 +1,6 @@
 from db.run_sql import run_sql
-
 from models.booking import Booking
-from models.gym_class import Gym_class
-from models.member import Member
+
 import repositories.gym_class_repository as gym_class_repository
 import repositories.member_repository as member_repository
 

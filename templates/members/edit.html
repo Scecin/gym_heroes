@@ -7,20 +7,28 @@
     <div>
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
+    </div><br>
+    <div>
         <label for="last_name">Last Name:</label>
         <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
+    </div><br>
+    <div>
         <label for="membership">Membership:</label>
         <select name="membership">
             <option>Standard</option>
             <option>Premium</option>
         </select>
+    </div><br>
+    <div>
         <label for="state">State:</label>
         <select name="state">
             <option>Activate</option>
             <option>Deactivated</option>
         </select>
+    </div><br>
+    <div>
         <input type="submit">
-    </div>
+    </div><br>
 </form>
 
 {% endblock %}

@@ -15,39 +15,64 @@
         <nav>
             <ul class="home">
                 <i class="fa fa-home fa-2x"></i>
-                <a  href="/">Home</a></li>
+                <a  href="/">Home</a>
             </ul>
         </nav>
     </header>
+    <div class="heacer_picture">
+        <img  src="{{ url_for('static', filename='header.jpg') }}" alt="man doing weights" width=100% height="400px">
+        <div class="top-left">
+            Fitness software to grow your revenue.
+            <div class="secondary_text">
+                <div class="paragraph">
+                    <span>&#9745</span>
+                    <p> Easily manage all your bookings, members & classes online. </p>
+                </div>
+                <div class="paragraph">
+                    <span>&#9745</span>
+                    <p> keep track of all classes and create or edit new ones. </p>
+                </div>
+                <div class="paragraph">
+                    <span>&#9745</span>
+                    <p> Note the types of membership types and whether they are active or inactive.</p>
+                </div>
+                <div class="paragraph">
+                    <span>&#9745</span>
+                    <p> Easily divide classes into peak and off-peak times.</p>
+                </div>
+            </div>
+        </div>
+    </div>  
         <nav class="nav">
             <ul class="images">
-                <ul class="members">
-                    <h2>Members</h2>
+                <ul class="pictures">
+                    <div class="top-center">Members</div>
                     <ul>
-                        <a href="/members"><img src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="250px" border-radius=8px ></a><br>
-                        <form action="/members/new">
+                        <a href="/members"><img class="image" src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="250px"></a><br>
+
+                        <!-- <form action="/members/new">
                             <input class="button" type="submit" value="Add a new member">
-                        </form>
+                        </form> -->
                     </ul>
                 </ul>
-                <ul>
-                    <h2>Classes</h2>
+                <ul class="pictures">
+                    <div class="top-center">Classes</div>
                     <ul>
-                        <a class="image" href="/gym_classes"><img src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="250px"></a><br>
-                        <form action="/gym_classes/new">
+                        <a href="/gym_classes"><img class="image" src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="250px"></a><br>
+                        <!-- <form action="/gym_classes/new">
                             <input class="button" type="submit" value="Add a new class">
-                        </form>
+                        </form> -->
                     </ul>
                 </ul>
-                <ul>
-                    <h2>Bookings</h2>
+                <ul class="pictures">
+                    <div class="top-center">Bookings</div>
                     <ul>
                         <div class="booking">
-                        <a href="/bookings"><img src="{{ url_for('static', filename='booking.jpg') }}" alt="booking_picture" height="250px"></a><br>
+                        <a href="/bookings"><img class="image" src="{{ url_for('static', filename='bookings.jpg') }}" alt="booking_picture" height="250px"></a><br>
                         </div>
-                        <form action="/bookings/new">
+                        <!-- <form action="/bookings/new">
                             <input class="button" type="submit" value="Add a new booking">
-                        </form>
+                        </form> -->
 
                     </ul>
                 </ul>
@@ -61,6 +86,23 @@
         {% endblock %}
     </div> 
     <footer class="footer">
+        <div class="information">
+            <h4> Support </h4>
+            <a  href="/">Contact Us</a><br>
+            <a  href="/">FAQ</a>
+        </div>
+        <div class="information">
+            <h4> About </h4>
+            <a  href="/">Our story</a><br>
+            <a  href="/">Team</a><br>
+            <a  href="/">Carrers</a>
+        </div>
+        <div class="information">
+            <h4> Legal </h4>
+            <a  href="/">Terms&Conditions</a><br>
+            <a  href="/">Privacy Policy</a><br>
+            <a  href="/">Teerms of use</a>
+        </div>
         <div class="contact">
             <div class="address">
                 <i class="material-icons">place</i>
@@ -75,12 +117,14 @@
                 <p> support@gymheroes.com </p>
             </div>
         </div>
-        <p class="logo"> &copy; Gym Heroes 2022 </p>
-        <div>
-            <a href="#" class="fa fa-facebook fa-2x"></a>
-            <a href="#" class="fa fa-twitter fa-2x"></a>
-            <a href="#" class="fa fa-linkedin fa-2x"></a>
-            <a href="#" class="fa fa-instagram fa-2x"></a>
+        <div class="social">
+            <p class="logo"> &copy; Gym Heroes 2022 </p>
+            <div class="logos">
+                <a href="#" class="fa fa-facebook fa-2x"></a>
+                <a href="#" class="fa fa-twitter fa-2x"></a>
+                <a href="#" class="fa fa-linkedin fa-2x"></a>
+                <a href="#" class="fa fa-instagram fa-2x"></a>
+            </div>
         </div>
     </footer>
 </body>
