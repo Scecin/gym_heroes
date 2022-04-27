@@ -5,3 +5,4 @@ class Booking:
         self.member = member
         self.gym_class = gym_class
         self.id = id
+
