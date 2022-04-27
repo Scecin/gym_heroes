@@ -43,44 +43,33 @@
             </div>
         </div>
     </div>  
-        <nav class="nav">
-            <ul class="images">
-                <ul class="pictures">
-                    <div class="top-center">Members</div>
-                    <ul>
-                        <a href="/members"><img class="image" src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="250px"></a><br>
-
-                        <!-- <form action="/members/new">
-                            <input class="button" type="submit" value="Add a new member">
-                        </form> -->
-                    </ul>
-                </ul>
-                <ul class="pictures">
-                    <div class="top-center">Classes</div>
-                    <ul>
-                        <a href="/gym_classes"><img class="image" src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="250px"></a><br>
-                        <!-- <form action="/gym_classes/new">
-                            <input class="button" type="submit" value="Add a new class">
-                        </form> -->
-                    </ul>
-                </ul>
-                <ul class="pictures">
-                    <div class="top-center">Bookings</div>
-                    <ul>
-                        <div class="booking">
-                        <a href="/bookings"><img class="image" src="{{ url_for('static', filename='bookings.jpg') }}" alt="booking_picture" height="250px"></a><br>
-                        </div>
-                        <!-- <form action="/bookings/new">
-                            <input class="button" type="submit" value="Add a new booking">
-                        </form> -->
-
-                    </ul>
+    <nav class="nav">
+        <ul class="images">
+            <ul class="pictures">
+                <div class="top-center">Members</div>
+                <ul>
+                    <a href="/members"><img class="image" src="{{ url_for('static', filename='members.jpg') }}" alt="members_picture" height="250px"></a><br>
                 </ul>
             </ul>
-        </nav>
-        <div class="hr">
-            <hr>
-        </div>
+            <ul class="pictures">
+                <div class="top-center">Classes</div>
+                <ul>
+                    <a href="/gym_classes"><img class="image" src="{{ url_for('static', filename='class.jpg') }}" alt="class_picture" height="250px"></a><br>
+                </ul>
+            </ul>
+            <ul class="pictures">
+                <div class="top-center">Bookings</div>
+                <ul>
+                    <div class="booking">
+                    <a href="/bookings"><img class="image" src="{{ url_for('static', filename='bookings.jpg') }}" alt="booking_picture" height="250px"></a><br>
+                    </div>
+                </ul>
+            </ul>
+        </ul>
+    </nav>
+    <div class="hr">
+        <hr>
+    </div>
     <div class="container">
         {% block content %}
         {% endblock %}

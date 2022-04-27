@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.gym_class import Gym_class
 
-# Save classes
+# Save class
 def save(gym_class):
     sql = "INSERT INTO gym_classes (name, teacher, duration, capacity, peak_hour, state) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
     values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.capacity, gym_class.peak_hour, gym_class.state]
@@ -38,12 +38,12 @@ def update(gym_class):
     values = [gym_class.name, gym_class.teacher, gym_class.duration, gym_class.capacity, gym_class.peak_hour, gym_class.state, gym_class.id]
     run_sql(sql, values)
 
-# Delete all members
+# Delete all classes
 def delete_all():
     sql = "DELETE FROM gym_classes"
     run_sql(sql)
 
-# Delete a member
+# Delete a class
 def delete(id):
     sql = "DELETE FROM gym_classes WHERE id = %s"
     values = [id]

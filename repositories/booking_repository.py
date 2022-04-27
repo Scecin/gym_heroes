@@ -39,18 +39,18 @@ def select(id):
         booking = Booking(member, gym_class, result["id"])
     return booking
 
-# Delete all
+# Delete all bookings
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
 
-# Delete just one
+# Delete just one booking
 def delete(id):
     sql = "DELETE FROM bookings WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
-# Update
+# Update  a booking
 def update(booking):
     sql = "UPDATE bookings SET (member_id, gym_class_id) = (%s, %s) WHERE id = %s"
     values = [booking.member.id, booking.gym_class.id, booking.id]
