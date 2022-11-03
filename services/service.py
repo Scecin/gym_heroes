@@ -1,6 +1,7 @@
 from repositories.member_repository import by_class
 
-#  Check if there's free space in the class
+#  Check if there's free space in the class. Creates a variable = True, so there is usually space in the class, but if there are more members than capacity the variable is false, so I can't make the reservation.
+
 def check_capacity(gym_class):
     capacity = True
 
@@ -8,7 +9,7 @@ def check_capacity(gym_class):
         capacity = False
     return  capacity
 
-# check the membership and hour kind to book a class
+# check the membership and hour kind to book a class. 
 def check_membership_and_peak_hour(gym_class, member):
     membership = False
 
